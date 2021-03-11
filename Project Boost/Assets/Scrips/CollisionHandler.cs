@@ -23,12 +23,21 @@ public class CollisionHandler : MonoBehaviour
                 break;
 
             default:
-                ReloadLevel();
+                StartCrashSequence();
                 break;
         }
     }
 
-    private static void ReloadLevel()
+    void StartCrashSequence()
+    {
+        MonoBehaviour movementScript;
+        movementScript = GetComponent<Movment>();
+        movementScript.enabled = false;
+
+        Invoke("ReloadLevel", 1f);
+    }
+
+    void ReloadLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
