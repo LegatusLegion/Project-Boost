@@ -239,6 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d4d396fea352547aef3afb3c1f5f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invokeValue: 5
+  invokeValue: 1
   rocketCrash: {fileID: 8300000, guid: 7056f42bc8bd9ac40b4aa666b5e0a0e2, type: 3}
   reachingFinish: {fileID: 8300000, guid: 53e65f98a4d75104e9caeb477b08ec20, type: 3}
