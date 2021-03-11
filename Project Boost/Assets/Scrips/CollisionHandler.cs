@@ -12,6 +12,7 @@ public class CollisionHandler : MonoBehaviour
 
     [SerializeField] ParticleSystem rocketCrashParticles;
     [SerializeField] ParticleSystem reachingFinishParticles;
+    
 
     AudioSource audioSource;
     
@@ -31,7 +32,6 @@ public class CollisionHandler : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Friendly":
-                Debug.Log("Hit Friendly");
                 break;
             case "Finish":
                 NextLevelSequence();
