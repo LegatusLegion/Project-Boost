@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: e2114d89b35669041b6cdf9cd58148b6, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -311,7 +311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.116902374, y: -0, z: -0, w: 0.99314344}
-  m_LocalPosition: {x: 1.54, y: 4.01, z: -10}
+  m_LocalPosition: {x: 2.73, y: 4.01, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -456,7 +456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217463562481711746, guid: d97df61ff3541af4e874b7ad9a2d570b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.844
+      value: 0.783
       objectReference: {fileID: 0}
     - target: {fileID: 7217463562481711746, guid: d97df61ff3541af4e874b7ad9a2d570b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -493,10 +493,6 @@ PrefabInstance:
     - target: {fileID: 7217463562481711774, guid: d97df61ff3541af4e874b7ad9a2d570b, type: 3}
       propertyPath: m_Name
       value: Rocket
-      objectReference: {fileID: 0}
-    - target: {fileID: 7217463562481711774, guid: d97df61ff3541af4e874b7ad9a2d570b, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d97df61ff3541af4e874b7ad9a2d570b, type: 3}
