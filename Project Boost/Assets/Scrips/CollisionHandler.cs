@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    // PARAMETERS - for tuning, typically set in the editor
+    [SerializeField] float invokeValue = 1f;
+    [SerializeField] AudioClip rocketCrash;
+    [SerializeField] AudioClip reachingFinish;
+
+    AudioSource audioSource ;
+
+    public void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         switch (collision.gameObject.tag)
@@ -12,16 +24,9 @@ public class CollisionHandler : MonoBehaviour
             case "Friendly":
                 Debug.Log("Hit Friendly");
                 break;
-
-            case "Fuel":
-                Debug.Log("Hit Fuel");
-                break;
-
             case "Finish":
-                LoadNextLevel();
-                Debug.Log("finish");
+                NextLevelSequence();
                 break;
-
             default:
                 StartCrashSequence();
                 break;
@@ -30,17 +35,24 @@ public class CollisionHandler : MonoBehaviour
 
     void StartCrashSequence()
     {
-        MonoBehaviour movementScript;
-        movementScript = GetComponent<Movment>();
-        movementScript.enabled = false;
-
-        Invoke("ReloadLevel", 1f);
+        //todo add particle effect
+        audioSource.PlayOneShot(rocketCrash);
+        GetComponent<Movment>().enabled = false;
+        Invoke("ReloadLevel", invokeValue);
     }
 
     void ReloadLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    void NextLevelSequence()
+    {
+        //todo add particle effect
+        audioSource.PlayOneShot(reachingFinish);
+        GetComponent<Movment>().enabled = false;
+        Invoke("LoadNextLevel", invokeValue);
     }
 
     void LoadNextLevel()
