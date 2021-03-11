@@ -35,7 +35,7 @@ public class Movment : MonoBehaviour
         InputThrust();
         InputRotation();
     }
-
+      
     void InputThrust()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -64,7 +64,7 @@ public class Movment : MonoBehaviour
             EndRotationEffects();
         }
     }
-    private void StartThrust()
+    void StartThrust()
     {
         rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
         if (!audioSource.isPlaying)
@@ -77,12 +77,12 @@ public class Movment : MonoBehaviour
         }
     }
 
-    private void EndMainEffects()
+    void EndMainEffects()
     {
         audioSource.Stop();
         mainBoosterParticles.Stop();
     }
-    private void RotateLeft()
+    void RotateLeft()
     {
         ApplyRotation(mainRotationThrust);
         if (!rightBoosterParticles.isPlaying)
@@ -91,7 +91,7 @@ public class Movment : MonoBehaviour
         }
     }
 
-    private void RotateRight()
+    void RotateRight()
     {
         ApplyRotation(-mainRotationThrust);
         if (!leftBoosterParticles.isPlaying)
@@ -100,7 +100,7 @@ public class Movment : MonoBehaviour
         }
     }
 
-    private void EndRotationEffects()
+    void EndRotationEffects()
     {
         rightBoosterParticles.Stop();
         leftBoosterParticles.Stop();

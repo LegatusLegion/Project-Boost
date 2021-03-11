@@ -15,19 +15,25 @@ public class CollisionHandler : MonoBehaviour
     
 
     AudioSource audioSource;
-    
+
 
 
     bool isTransitioning = false;
+    bool collisionDisabled = false;
 
     public void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void Update()
     {
-        if (isTransitioning) return;
+        DebugConsole();
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (isTransitioning || collisionDisabled) return;
 
         switch (collision.gameObject.tag)
         {
@@ -39,6 +45,18 @@ public class CollisionHandler : MonoBehaviour
             default:
                 StartCrashSequence();
                 break;
+        }
+    }
+
+    void DebugConsole()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        } 
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            collisionDisabled = !collisionDisabled;
         }
     }
 
