@@ -34,16 +34,8 @@ public class Movment : MonoBehaviour
     {
         InputThrust();
         InputRotation();
-        ExitApplication();
     }
 
-    void ExitApplication()
-    {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-    }
       
     void InputThrust()
     {
